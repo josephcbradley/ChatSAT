@@ -2,9 +2,9 @@
 ## A simple script to generate SAT questions. 
 
 ### Setup
-1. Install (Julia)[https://julialang.org/downloads/]. Any verion >= 1.8 should work.
+1. Install [Julia](https://julialang.org/downloads/). Any verion >= 1.8 should work.
 
-2. Get an (OpenAI API key)[https://platform.openai.com/account/api-keys] and save it in your Julia environment (```~/.julia/config/startup.jl``````) as ```ENV["OPENAI_API_KEY"] = "123456789abcdefg"``` etc.
+2. Get an [OpenAI API key](https://platform.openai.com/account/api-keys) and save it in your Julia environment (```~/.julia/config/startup.jl```) as ```ENV["OPENAI_API_KEY"] = "123456789abcdefg"``` etc.
 
 3. Clone this repo, cd into the folder and create folders for your input texts and arguments:
 
@@ -15,7 +15,11 @@ cd ChatSAT
 mkdir texts answers
 ```
 
-4. Install the relevant packages by running ```julia --project=. setup.jl``` at the command line. You should then be ready to go.
+4. Install the relevant packages by running 
+
+```julia --project=. setup.jl```
+
+at the command line. You should then be ready to go.
 
 ### Creating questions
 
