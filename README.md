@@ -28,11 +28,11 @@ at the command line. You should then be ready to go.
 2. Open ```question_generator.jl```. Edit around line 149 - this is the input for the script. 
 
 3. Each line in ```data``` should be a five-tuple that contains:
-    3.1 the 'title' of the text, 
-    3.2 the directory in which to write the answers, 
-    3.3 the directory in which to read the texts, 
-    3.4 the number of questions to generate per 'week',
-    3.5 the sections of the book from which to generate questions. The largest number is ```N```, the number of 'weeks' that the book will be divided into.
+    1. the 'title' of the text, 
+    2. the directory in which to write the answers, 
+    3. the directory in which to read the texts, 
+    4. the number of questions to generate per 'week',
+    5. the sections of the book from which to generate questions. The largest number is ```N```, the number of 'weeks' that the book will be divided into.
 
 There are some examples in the code already. 
 
