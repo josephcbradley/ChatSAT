@@ -1,0 +1,4 @@
+[deps]
+HTTP = "cd3eb016-35fb-5094-929b-558a96fad6f3"
+OpenAI = "e9f21f70-7185-4079-aca2-91159181367c"
+ProgressMeter = "92933f4c-e287-5a05-a399-4b506db050ca"
