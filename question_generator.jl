@@ -1,5 +1,17 @@
-using OpenAI, HTTP, ProgressMeter
+#check that API key is present 
+
+if !haskey(ENV, "OPENAI_API_KEY")
+    error("""
+    I couldn't find an OpenAI key in your Julia environemt.
+    This is normally found in ~/.julia/config/startup.jl.
+    See https://docs.julialang.org/en/v1/manual/environment-variables/ for more details.
+    You need to set this before using the script to generate questions.
+    """)
+end
+
 const key = ENV["OPENAI_API_KEY"]
+
+using OpenAI, HTTP, ProgressMeter
 
 const model = "gpt-3.5-turbo"
 
@@ -74,6 +86,7 @@ function generate_many_questions(text_path, section, N, n_weeks)
     @showprogress for n in 1:N
 
         excerpt = ""
+        # Keep adding lines until we hit 130 words.
         while word_count(excerpt) < 130
             if !isempty(it)
                 excerpt *= popfirst!(it)
@@ -134,10 +147,8 @@ function create_all_weeks(tup)
 end
 
 data = [
-    #("calpurnia", "answers/calpurnia/", "texts/calpurnia.txt", 15, 1:4),
-    ("balloons", "answers/balloons/", "texts/balloons.txt", 15, 1:4),
-    ("algernon", "answers/algernon/", "texts/algernon.txt", 15, 1:4),
-    #("julius_caesar", "answers/julius_caesar/", "texts/julius_caesar.txt", 15, 1:4)
+    ("gatsby", "answers/gatsby/", "texts/gatsby.txt", 15, 1:4),
+    ("algernon", "answers/algernon/", "texts/algernon.txt", 20, [1, 5]),
 ]
 
 
